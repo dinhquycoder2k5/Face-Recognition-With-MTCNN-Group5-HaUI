@@ -1,0 +1,20 @@
+Dataset/FaceData/processed\tung\download (4).png 76 37 144 117
+Dataset/FaceData/processed\tung\download (7).png 120 0 222 115
+Dataset/FaceData/processed\tung\download (2).png 65 27 182 183
+Dataset/FaceData/processed\tung\download.png 62 35 170 166
+Dataset/FaceData/processed\tung\download (6).png 42 11 132 122
+Dataset/FaceData/processed\tung\download (1).png 76 5 173 126
+Dataset/FaceData/processed\tung\download (3).png 61 11 141 103
+Dataset/FaceData/processed\tung\download (8).png 95 1 195 122
+Dataset/FaceData/processed\tung\download (9).png 79 23 168 132
+Dataset/FaceData/processed\tung\download (5).png 55 21 159 148
+Dataset/FaceData/processed\pu\download (10).png 46 45 153 178
+Dataset/FaceData/processed\pu\download.png 51 29 153 151
+Dataset/FaceData/processed\pu\download (3).png 95 11 192 132
+Dataset/FaceData/processed\pu\download (4).png 25 36 91 110
+Dataset/FaceData/processed\pu\download (8).png 56 0 170 145
+Dataset/FaceData/processed\pu\download (7).png 83 4 212 171
+Dataset/FaceData/processed\pu\download (5).png 43 22 174 179
+Dataset/FaceData/processed\pu\download (6).png 106 17 204 141
+Dataset/FaceData/processed\pu\download (1).png 126 14 216 125
+Dataset/FaceData/processed\pu\download (2).png 39 27 145 166
