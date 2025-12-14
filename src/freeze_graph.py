@@ -38,7 +38,7 @@ from six.moves import xrange  # @UnresolvedImport
 def main(args):
     with tf.Graph().as_default():
         with tf.Session() as sess:
-            # Load the model metagraph and checkpoint
+           # Load model metagraph và checkpoint
             print('Model directory: %s' % args.model_dir)
             meta_file, ckpt_file = facenet.get_model_filenames(os.path.expanduser(args.model_dir))
             

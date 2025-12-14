@@ -43,15 +43,15 @@ def main(args):
 
         with tf.Session() as sess:
       
-            # Load the model
+            # Load model FaceNet
             facenet.load_model(args.model)
     
-            # Get input and output tensors
+          # Lấy tensor input/output
             images_placeholder = tf.get_default_graph().get_tensor_by_name("input:0")
             embeddings = tf.get_default_graph().get_tensor_by_name("embeddings:0")
             phase_train_placeholder = tf.get_default_graph().get_tensor_by_name("phase_train:0")
 
-            # Run forward pass to calculate embeddings
+           # Chạy mạng để lấy embedding cho các ảnh
             feed_dict = { images_placeholder: images, phase_train_placeholder:False }
             emb = sess.run(embeddings, feed_dict=feed_dict)
             
@@ -62,7 +62,8 @@ def main(args):
                 print('%1d: %s' % (i, args.image_files[i]))
             print('')
             
-            # Print distance matrix
+            # In ma trận khoảng cách (Distance Matrix)
+            # Khoảng cách Euclide càng nhỏ -> Càng giống nhau
             print('Distance matrix')
             print('    ', end='')
             for i in range(nrof_images):

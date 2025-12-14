@@ -1,0 +1,31 @@
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_47_Pro.png 789 315 1258 862
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_48_Pro.png 827 344 1255 845
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_49_Pro (2).png 836 343 1271 858
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_49_Pro.png 860 350 1285 855
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_50_Pro (2).png 805 332 1225 826
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_50_Pro (3).png 802 325 1243 836
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_50_Pro.png 815 342 1246 848
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_51_Pro (2).png 835 426 1253 903
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_51_Pro.png 817 364 1241 860
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_52_Pro (2).png 832 318 1253 804
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_52_Pro.png 822 388 1249 885
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_53_Pro (2).png 827 283 1248 775
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_53_Pro (3).png 840 336 1255 827
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_53_Pro.png 832 284 1237 747
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_54_Pro (2).png 882 316 1314 847
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_54_Pro.png 859 343 1279 849
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_55_Pro (2).png 859 339 1273 828
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_55_Pro.png 871 338 1290 839
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_56_Pro (2).png 841 357 1265 847
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_56_Pro (3).png 841 358 1258 840
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_56_Pro.png 836 355 1242 823
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_57_Pro (2).png 841 328 1241 791
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_57_Pro.png 837 344 1260 835
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_58_Pro (2).png 853 299 1234 733
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_58_Pro.png 846 320 1258 789
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_59_Pro (2).png 831 269 1232 744
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_59_Pro (3).png 806 283 1223 799
+Dataset/FaceData/processed\quy\WIN_20251214_18_53_59_Pro.png 842 286 1232 730
+Dataset/FaceData/processed\quy\WIN_20251214_18_54_00_Pro (2).png 834 419 1253 896
+Dataset/FaceData/processed\quy\WIN_20251214_18_54_00_Pro.png 805 375 1204 856
+Dataset/FaceData/processed\quy\WIN_20251214_18_54_01_Pro.png 864 384 1287 875

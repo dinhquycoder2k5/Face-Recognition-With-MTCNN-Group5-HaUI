@@ -44,9 +44,9 @@ from tensorflow.python.ops import data_flow_ops
 from six.moves import xrange  # @UnresolvedImport
 
 def main(args):
-  
+    # Load định nghĩa mạng (thường là Inception ResNet v1)
     network = importlib.import_module(args.model_def)
-
+    # Tạo thư mục log và model để lưu checkpoint
     subdir = datetime.strftime(datetime.now(), '%Y%m%d-%H%M%S')
     log_dir = os.path.join(os.path.expanduser(args.logs_base_dir), subdir)
     if not os.path.isdir(log_dir):  # Create the log directory if it doesn't exist
@@ -55,10 +55,9 @@ def main(args):
     if not os.path.isdir(model_dir):  # Create the model directory if it doesn't exist
         os.makedirs(model_dir)
 
-    # Write arguments to a text file
+   
     facenet.write_arguments_to_file(args, os.path.join(log_dir, 'arguments.txt'))
         
-    # Store some git revision info in a text file in the log directory
     src_path,_ = os.path.split(os.path.realpath(__file__))
     facenet.store_revision_info(src_path, log_dir, ' '.join(sys.argv))
 
@@ -72,9 +71,7 @@ def main(args):
     
     if args.lfw_dir:
         print('LFW directory: %s' % args.lfw_dir)
-        # Read the file containing the pairs used for testing
         pairs = lfw.read_pairs(os.path.expanduser(args.lfw_pairs))
-        # Get the paths for the corresponding images
         lfw_paths, actual_issame = lfw.get_paths(os.path.expanduser(args.lfw_dir), pairs)
         
     
@@ -82,7 +79,6 @@ def main(args):
         tf.set_random_seed(args.seed)
         global_step = tf.Variable(0, trainable=False)
 
-        # Placeholder for the learning rate
         learning_rate_placeholder = tf.placeholder(tf.float32, name='learning_rate')
         
         batch_size_placeholder = tf.placeholder(tf.int32, name='batch_size')

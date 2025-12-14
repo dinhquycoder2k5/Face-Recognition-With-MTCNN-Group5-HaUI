@@ -2,6 +2,6 @@ arguments: src/align_dataset_mtcnn.py Dataset/FaceData/raw Dataset/FaceData/proc
 --------------------
 tensorflow version: 2.20.0
 --------------------
-git hash: b''
+git hash: b'4d827ecdeae3f86999d9ddfecea7746a772709ef'
 --------------------
 b''

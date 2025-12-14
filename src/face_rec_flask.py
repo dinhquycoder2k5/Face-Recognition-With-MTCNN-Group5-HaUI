@@ -18,7 +18,7 @@ import cv2
 import collections
 from sklearn.svm import SVC
 import base64
-
+# Cấu hình các tham số và đường dẫn model
 MINSIZE = 20
 THRESHOLD = [0.6, 0.7, 0.7]
 FACTOR = 0.709
@@ -27,7 +27,8 @@ INPUT_IMAGE_SIZE = 160
 CLASSIFIER_PATH = '../Models/facemodel.pkl'
 FACENET_MODEL_PATH = '../Models/20180402-114759.pb'
 
-# Load The Custom Classifier
+# --- KHỞI TẠO MODEL MỘT LẦN DUY NHẤT KHI CHẠY SERVER ---
+# Load Classifier (SVM)
 with open(CLASSIFIER_PATH, 'rb') as file:
     model, class_names = pickle.load(file)
 print("Custom Classifier, Successfully loaded")
@@ -39,11 +40,10 @@ gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.6)
 sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpu_options, log_device_placement=False))
 
 
-# Load the model
+# Load model
 print('Loading feature extraction model')
 facenet.load_model(FACENET_MODEL_PATH)
 
-# Get input and output tensors
 images_placeholder = tf.get_default_graph().get_tensor_by_name("input:0")
 embeddings = tf.get_default_graph().get_tensor_by_name("embeddings:0")
 phase_train_placeholder = tf.get_default_graph().get_tensor_by_name("phase_train:0")

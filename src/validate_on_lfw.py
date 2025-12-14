@@ -47,12 +47,13 @@ def main(args):
       
         with tf.Session() as sess:
             
-            # Read the file containing the pairs used for testing
+            # Đọc file chứa các cặp ảnh để test (pairs.txt)
+            # File này quy định: Cặp nào là cùng một người, cặp nào là khác người
             pairs = lfw.read_pairs(os.path.expanduser(args.lfw_pairs))
 
-            # Get the paths for the corresponding images
+            # Lấy đường dẫn ảnh thực tế và nhãn (Same/Not Same)
             paths, actual_issame = lfw.get_paths(os.path.expanduser(args.lfw_dir), pairs)
-            
+            # Định nghĩa các Placeholder (cổng vào dữ liệu)
             image_paths_placeholder = tf.placeholder(tf.string, shape=(None,1), name='image_paths')
             labels_placeholder = tf.placeholder(tf.int32, shape=(None,1), name='labels')
             batch_size_placeholder = tf.placeholder(tf.int32, name='batch_size')
@@ -68,16 +69,16 @@ def main(args):
             eval_enqueue_op = eval_input_queue.enqueue_many([image_paths_placeholder, labels_placeholder, control_placeholder], name='eval_enqueue_op')
             image_batch, label_batch = facenet.create_input_pipeline(eval_input_queue, image_size, nrof_preprocess_threads, batch_size_placeholder)
      
-            # Load the model
+            # Load model FaceNet cần kiểm tra
             input_map = {'image_batch': image_batch, 'label_batch': label_batch, 'phase_train': phase_train_placeholder}
             facenet.load_model(args.model, input_map=input_map)
 
-            # Get output tensor
+            # Lấy tensor output là embeddings
             embeddings = tf.get_default_graph().get_tensor_by_name("embeddings:0")
-#              
+            # Bắt đầu chạy
             coord = tf.train.Coordinator()
             tf.train.start_queue_runners(coord=coord, sess=sess)
-
+            # Gọi hàm đánh giá chi tiết
             evaluate(sess, eval_enqueue_op, image_paths_placeholder, labels_placeholder, phase_train_placeholder, batch_size_placeholder, control_placeholder,
                 embeddings, label_batch, paths, actual_issame, args.lfw_batch_size, args.lfw_nrof_folds, args.distance_metric, args.subtract_mean,
                 args.use_flipped_images, args.use_fixed_image_standardization)

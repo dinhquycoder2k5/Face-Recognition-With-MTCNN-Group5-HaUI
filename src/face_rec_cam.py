@@ -35,14 +35,12 @@ def main():
     VIDEO_PATH = args.path
     FACENET_MODEL_PATH = 'Models/20180402-114759.pb'
 
-    # Load The Custom Classifier
     with open(CLASSIFIER_PATH, 'rb') as file:
         model, class_names = pickle.load(file)
     print("Custom Classifier, Successfully loaded")
 
     with tf.Graph().as_default():
 
-        # Cai dat GPU neu co
         gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.6)
         sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpu_options, log_device_placement=False))
 
@@ -52,7 +50,6 @@ def main():
             print('Loading feature extraction model')
             facenet.load_model(FACENET_MODEL_PATH)
 
-            # Get input and output tensors
             images_placeholder = tf.get_default_graph().get_tensor_by_name("input:0")
             embeddings = tf.get_default_graph().get_tensor_by_name("embeddings:0")
             phase_train_placeholder = tf.get_default_graph().get_tensor_by_name("phase_train:0")
@@ -62,10 +59,11 @@ def main():
 
             people_detected = set()
             person_detected = collections.Counter()
-
+            # Khởi động luồng video từ webcam (src=0)
             cap  = VideoStream(src=0).start()
 
             while (True):
+                # Đọc frame từ VideoStream
                 frame = cap.read()
                 frame = imutils.resize(frame, width=600)
                 frame = cv2.flip(frame, 1)

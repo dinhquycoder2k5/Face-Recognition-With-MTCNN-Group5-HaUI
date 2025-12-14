@@ -51,18 +51,16 @@ def main(args):
 
     subdir = datetime.strftime(datetime.now(), '%Y%m%d-%H%M%S')
     log_dir = os.path.join(os.path.expanduser(args.logs_base_dir), subdir)
-    if not os.path.isdir(log_dir):  # Create the log directory if it doesn't exist
+    if not os.path.isdir(log_dir):
         os.makedirs(log_dir)
     model_dir = os.path.join(os.path.expanduser(args.models_base_dir), subdir)
-    if not os.path.isdir(model_dir):  # Create the model directory if it doesn't exist
+    if not os.path.isdir(model_dir):  
         os.makedirs(model_dir)
 
     stat_file_name = os.path.join(log_dir, 'stat.h5')
 
-    # Write arguments to a text file
     facenet.write_arguments_to_file(args, os.path.join(log_dir, 'arguments.txt'))
         
-    # Store some git revision info in a text file in the log directory
     src_path,_ = os.path.split(os.path.realpath(__file__))
     facenet.store_revision_info(src_path, log_dir, ' '.join(sys.argv))
 

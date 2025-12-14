@@ -1,0 +1,12 @@
+Dataset/FaceData/processed\quy\WIN_20251207_15_23_15_Pro.png 674 205 1088 728
+Dataset/FaceData/processed\quy\WIN_20251207_15_23_04_Pro.png 712 193 1092 615
+Dataset/FaceData/processed\quy\WIN_20251207_15_23_09_Pro.png 689 224 1109 734
+Dataset/FaceData/processed\quy\WIN_20251207_15_23_03_Pro.png 647 204 1066 698
+Dataset/FaceData/processed\quy\WIN_20251207_15_22_55_Pro.png 695 221 1079 698
+Dataset/FaceData/processed\quy\WIN_20251207_15_22_57_Pro.png 727 212 1133 705
+Dataset/FaceData/processed\quy\WIN_20251207_15_22_54_Pro.png 727 229 1132 729
+Dataset/FaceData/processed\quy\WIN_20251207_15_23_11_Pro.png 709 188 1125 715
+Dataset/FaceData/processed\quy\WIN_20251207_15_23_12_Pro.png 710 211 1113 700
+Dataset/FaceData/processed\quy\WIN_20251207_15_23_01_Pro.png 703 219 1108 702
+Dataset/FaceData/processed\quy\WIN_20251207_15_23_06_Pro.png 711 215 1128 724
+Dataset/FaceData/processed\quy\WIN_20251207_15_22_59_Pro.png 710 211 1130 742

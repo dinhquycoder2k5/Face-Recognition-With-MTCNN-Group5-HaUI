@@ -42,15 +42,15 @@ import math
 from six import iteritems
 
 def triplet_loss(anchor, positive, negative, alpha):
-    """Calculate the triplet loss according to the FaceNet paper
+    """Tính toán Triplet Loss theo bài báo FaceNet.
+    Triplet Loss cố gắng kéo Anchor (ảnh gốc) và Positive (ảnh cùng người) lại gần nhau,
+    đồng thời đẩy Negative (ảnh khác người) ra xa.
     
     Args:
-      anchor: the embeddings for the anchor images.
-      positive: the embeddings for the positive images.
-      negative: the embeddings for the negative images.
-  
-    Returns:
-      the triplet loss according to the FaceNet paper as a float tensor.
+      anchor: vector đặc trưng của ảnh gốc.
+      positive: vector đặc trưng của ảnh cùng người.
+      negative: vector đặc trưng của ảnh khác người.
+      alpha: biên độ (margin) giữa các cụm.
     """
     with tf.variable_scope('triplet_loss'):
         pos_dist = tf.reduce_sum(tf.square(tf.subtract(anchor, positive)), 1)
@@ -62,9 +62,7 @@ def triplet_loss(anchor, positive, negative, alpha):
     return loss
   
 def center_loss(features, label, alfa, nrof_classes):
-    """Center loss based on the paper "A Discriminative Feature Learning Approach for Deep Face Recognition"
-       (http://ydwen.github.io/papers/WenECCV16.pdf)
-    """
+    """Center loss: Giúp các đặc trưng của cùng một lớp tụ lại gần tâm của lớp đó."""
     nrof_features = features.get_shape()[1]
     centers = tf.get_variable('centers', [nrof_classes, nrof_features], dtype=tf.float32,
         initializer=tf.constant_initializer(0), trainable=False)
